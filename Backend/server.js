@@ -22,7 +22,7 @@ const URI = process.env.MONGODB_URI;
 
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "https://rooba.onrender.com",
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
