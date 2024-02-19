@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend && npm run dev",
-    "build": "cd frontend && npm run build"
+    "start": "concurrently \"cd frontend && npm run dev\" \"cd backend && npm run dev\""
   },
   "author": "Anmol Sonkar",
   "license": "ISC",
-  "engines": {
-    "node": "16.x"
+  "dependencies": {
+    "concurrently": "^8.2.2"
   }
 }
