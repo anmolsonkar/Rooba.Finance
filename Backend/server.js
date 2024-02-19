@@ -22,7 +22,7 @@ const URI = process.env.MONGODB_URI;
 
 app.use(
     cors({
-        origin: "https://rooba.onrender.com",
+        origin: "https://roobainvest.netlify.app",
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
