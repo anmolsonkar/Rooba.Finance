@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Switzer", sans-serif;
+}
+html,
+body {
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: #121212;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #d2d2d2;
+}
+
+.playfair-display {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+}
+
+.cards-shadow:hover {
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(57, 73, 171, 1);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(57, 73, 171, 1);
+    box-shadow: 0px 1px 10px 0px rgba(57, 73, 171, 1);
+}
