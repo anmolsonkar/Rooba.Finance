@@ -9,8 +9,6 @@ const routes = require('./routes/routers');
 
 const app = express();
 
-app.set("trust proxy", 1);
-
 const URI = process.env.MONGODB_URI;
 
 (async () => {
@@ -24,7 +22,7 @@ const URI = process.env.MONGODB_URI;
 
 app.use(
     cors({
-        origin: "https://roobainvest.netlify.app",
+        origin: "https://roobafinance.onrender.com",
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
