@@ -28,7 +28,7 @@ function Profile() {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get(`https://rooba.onrender.com/users/${user_id}`);
+            const response = await axios.get(`http://localhost:4000/users/${user_id}`);
             setUser(response.data);
             setFormData(response.data);
             setInitialoading(false);
@@ -112,7 +112,7 @@ function Profile() {
     const handleUpdate = async () => {
         setLoading(true);
         try {
-            const res = await axios.put(`https://rooba.onrender.com/users/${user_id}`, formData);
+            const res = await axios.put(`http://localhost:4000/users/${user_id}`, formData);
             if (res.data) {
                 toast.success(res.data.message)
             }
@@ -127,7 +127,7 @@ function Profile() {
 
     const handleDelete = async () => {
         try {
-            const res = await axios.delete(`https://rooba.onrender.com/users/${user_id}`);
+            const res = await axios.delete(`http://localhost:4000/users/${user_id}`);
             if (res.data) {
                 navigate("/");
 

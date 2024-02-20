@@ -99,7 +99,7 @@ function SignUp() {
 
         try {
             setLoading(true);
-            const res = await axios.post('https://rooba.onrender.com/users', formData, {
+            const res = await axios.post('http://localhost:4000/users', formData, {
                 withCredentials: true,
                 headers: {
                     'Content-Type': 'application/json'
