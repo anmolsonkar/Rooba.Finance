@@ -26,7 +26,7 @@ const handleErrors = (error) => {
     }
 
     if (error.code === 11000) {
-        errors.email = 'That email is already exists';
+        errors.email = 'That email already exists';
         return errors;
     }
 
@@ -43,7 +43,7 @@ const signup_post = async (req, res, next) => {
     try {
         const user = await User.create({ email, password, name, country, age });
         const token = createToken(user._id);
-        res.cookie('jwt', token, { withCredentials: true, httpOnly: false, maxAge: maxAge * 1000 });
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
         res.status(201).json({ user: user._id, created: true });
 
     } catch (error) {
@@ -57,7 +57,7 @@ const login_post = async (req, res) => {
     try {
         const user = await User.login(email, password);
         const token = createToken(user._id);
-        res.cookie("jwt", token, { httpOnly: false, maxAge: maxAge * 1000 });
+        res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
         res.status(200).json({ user: user._id, status: true });
     } catch (error) {
         const errors = handleErrors(error);
@@ -83,18 +83,17 @@ const updateUserById = async (req, res) => {
         }
 
         const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        res.json({ user: user, message: 'Profile updated sucessfully.' });
+        res.json({ user: user, message: 'Profile updated successfully.' });
     } catch (error) {
         res.status(400).json({ message: 'User not found' });
     }
-
 };
 
 
 const deleteUserById = async (req, res) => {
     try {
         await User.findByIdAndDelete(req.params.id);
-        res.json({ message: 'Profile deleted sucessfully.' });
+        res.json({ message: 'Profile deleted successfully.' });
     } catch (error) {
         res.status(400).json({ message: 'User not found' });
     }
@@ -107,5 +106,3 @@ module.exports = {
     updateUserById,
     deleteUserById,
 };
-
-
