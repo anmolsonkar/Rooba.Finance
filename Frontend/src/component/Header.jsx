@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Close, Menu } from "@mui/icons-material";
 import { Link, useLocation } from "react-router-dom";
 import { useAuthContext } from '../context/AuthContext';
+import { BackgroundGradientAnimation } from "./background-gradient-animation";
 
 const Header = () => {
     const [menu, setMenu] = useState(false);
@@ -35,9 +36,10 @@ const Header = () => {
 
     return (
         <div className="w-full text-white items-center flex flex-col bg-[#121212]">
+
             <nav data-aos="fade" className="flex justify-between items-center lg:mt-10 md:mt-10 mt-5 pb-3 lg:border-b md:border-b border-b-[#4A494A] w-11/12 z-10 ">
                 <div>
-                    <img className="w-28 -ml-2" src="https://i.imgur.com/6ZJGQ7b.png" alt="Logo" />
+                    <img className="w-28 -ml-2" src="https://i.imgur.com/XrtBLYm.png" alt="Logo" />
                 </div>
 
                 <div className="space-x-14 hidden lg:flex md:flex items-center">
@@ -88,8 +90,8 @@ const Header = () => {
             </nav>
 
             <div className="w-full flex justify-center">
-                <img className="absolute lg:w-[45%] lg:-top-[20%] md:w-[45%] md:-top-[20%] top-0" src="https://i.imgur.com/Wbt1jDF.jpg" alt="background-img" />
-                <div className="lg:mt-[17%] md:mt-[17%] mt-[45%] z-10 text-center">
+                <BackgroundGradientAnimation />
+                <div className="lg:mt-[17%] md:mt-[17%] mt-[45%]  text-center">
                     <p data-aos="fade" data-aos-delay="200" className="playfair-display text-[55px] lg:text-[60px] md:text-[60px]">Overcome Investment Barriers,</p>
                     <p data-aos="fade" data-aos-delay="300" className="lg:ml-[11rem] md:ml-[11rem] text-[55px] lg:text-[60px] md:text-[60px] playfair-display">Build <span className="playfair-display italic">Sustainable</span> Wealth</p>
                     <p data-aos="fade" data-aos-delay="400" className="text-lg lg:mt-2 md:mt-2 mt-10 p-3">Dive into alternative markets with us and set your<br />capital on the path of <span className="underline">

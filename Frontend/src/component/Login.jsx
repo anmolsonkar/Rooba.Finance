@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { Visibility, VisibilityOff, West } from '@mui/icons-material';
+import { BackgroundGradientAnimation } from './background-gradient-animation';
 
 
 function Login() {
@@ -87,8 +88,8 @@ function Login() {
 
     return (
         <div className="flex h-screen flex-grow justify-center items-center bg-[#121212]">
-            <Link data-aos="fade" to="/" className='fixed top-0 left-0 p-5 text-white text-sm'> <West /> <span className='ml-2'>Back to home</span></Link>
-            <img className='absolute md:h-full lg:h-full' src="https://i.imgur.com/AmB1j1r.png" alt="Background Image" />
+            <Link data-aos="fade" to="/" className='fixed top-0 left-0 p-5 text-white text-sm z-10'> <West /> <span className='ml-2'>Back to home</span></Link>
+            <BackgroundGradientAnimation />
             <form data-aos="fade"
                 className="flex flex-col pt-10 pb-10 p-5 bg-black z-10 space-y-5 rounded-md  bg-opacity-50 shadow hover:shadow-md duration-200 ease-in-out lg:w-[22vw]"
                 onSubmit={handleSubmit}
