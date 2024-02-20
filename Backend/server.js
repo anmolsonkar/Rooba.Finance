@@ -9,6 +9,8 @@ const routes = require('./routes/routers');
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 const URI = process.env.MONGODB_URI;
 
 (async () => {
