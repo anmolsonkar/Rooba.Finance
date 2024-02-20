@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
+:root {
+    --emerald-500: #2dd4bf;
+    --emerald-600: #2dd4bf;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
